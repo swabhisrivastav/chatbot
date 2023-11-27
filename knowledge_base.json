@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "question": "hi",
+      "answer": "hi"
+    },
+    {
+      "question": "hello",
+      "answer": "hello!"
+    },
+    {
+      "question": "how are you?",
+      "answer": "i'm good,thankyou"
+    },
+    {
+      "question": "who are you?",
+      "answer": "I'm a chatbot! i'm here to assist you"
+    },
+    {
+      "question": "what is 2+2",
+      "answer": "4"
+    }
+   
+  ]
+}
