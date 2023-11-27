@@ -19,7 +19,10 @@
     {
       "question": "what is 2+2",
       "answer": "4"
+    },
+    {
+      "question": "what is the capital of India?",
+      "answer": "Delhi"
     }
-   
   ]
 }

@@ -14,7 +14,7 @@ def save_knowledge_base(file_path: str, data: dict):
 
 def find_best_match(user_question: str, questions: list[str]) -> str | None:
 
-    matches: list = get_close_matches(user_question, questions, n=1, cutoff=0.4)
+    matches: list = get_close_matches(user_question, questions, n=1, cutoff=0.6)
     return matches[0] if matches else None
 
 def get_answer_for_question(question: str, knowledge_base: dict) -> str | None:
@@ -47,7 +47,10 @@ def teach_bot():
     if new_answer.lower() != 'skip':
         knowledge_base["questions"].append({"question": current_user_input, "answer": new_answer})
         save_knowledge_base('knowledge_base.json', knowledge_base)
-        gui.chat_history.insert(tk.END, f'Bot: Thank you! I learned a new response!\n\n')
+        gui.chat_history.insert(tk.END, f'Bot: Thank you! I learned a new response: {new_answer}\n\n')
+    else:
+        gui.chat_history.insert(tk.END, f'Bot: Skipped teaching for the current question.\n\n')
+
 
 # Load knowledge base
 knowledge_base = load_knowledge_base('knowledge_base.json')
@@ -55,3 +58,4 @@ knowledge_base = load_knowledge_base('knowledge_base.json')
 # Create and run the GUI
 gui = ChatbotGUI(handle_user_input, teach_bot)
 gui.run()
+
